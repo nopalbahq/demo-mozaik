@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "demo-app-mozaik/1.0.0": {
+        "runtime": {
+          "demo-app-mozaik.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "demo-app-mozaik/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
