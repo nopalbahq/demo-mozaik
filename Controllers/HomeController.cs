@@ -35,6 +35,8 @@ public class HomeController(DbStoreContext context) : Controller
         return Ok(employees);
     }
 
+    //Note ( )
+
     public IActionResult Privacy()
     {
         return View();
