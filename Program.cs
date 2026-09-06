@@ -1,7 +1,14 @@
+using demo_app_mozaik.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<DbStoreContext>
+(
+    opt => {opt.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));}
+);
 
 var app = builder.Build();
 
@@ -25,5 +32,5 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}")
     .WithStaticAssets();
 
-
+await DbInitializer.Init(app);
 app.Run();
