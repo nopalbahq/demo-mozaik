@@ -26,16 +26,31 @@ public class HomeController(DbStoreContext context) : Controller
     public async Task<IActionResult> GetEmployeePage([FromQuery] EmployeeParams employeeParams)
     {
         var query = context.Employees
+        .Where(x => !x.IsDeleted)
         .Search(employeeParams.SearchEmployee)
         .AsQueryable();
         var employees = await PagedList<Employee>.
                         ToPagedList(query, employeeParams.PageNumber, employeeParams.PageSize);
 
-        Response.AddPaginationHeader(employees.MetaData);
-        return Ok(employees);
+        return Ok(new {data = employees, metadata = employees.MetaData});
+        // return Ok(employees);
     }
 
-    //Note ( )
+    [HttpDelete("/api/employees/{id:int}")]
+    public async Task<IActionResult> DeleteById(int id)
+    {
+        var employee = await context.Employees.FindAsync(id);
+
+        if(employee == null ) return NotFound();
+
+        employee.IsDeleted = true;
+        context.Remove(employee);
+
+        var result = await context.SaveChangesAsync() >0;
+        if(result) return Ok();
+
+        return BadRequest("Problem deleting the Employee");
+    }
 
     public IActionResult Privacy()
     {

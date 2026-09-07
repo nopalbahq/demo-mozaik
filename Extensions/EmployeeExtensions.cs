@@ -7,6 +7,8 @@ public static class EmployeeExtensions
 {
     public static IQueryable<Employee> Search(this IQueryable<Employee> query, string? search)
     {
+        query = query.Where(x => !x.IsDeleted);
+
         if(string.IsNullOrEmpty(search)) return query;
 
         var lowerCastSearch = search.Trim().ToLower();
