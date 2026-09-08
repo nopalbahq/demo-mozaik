@@ -44,7 +44,6 @@ public class HomeController(DbStoreContext context) : Controller
         if(employee == null ) return NotFound();
 
         employee.IsDeleted = true;
-        context.Remove(employee);
 
         var result = await context.SaveChangesAsync() >0;
         if(result) return Ok();

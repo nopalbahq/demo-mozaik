@@ -2,7 +2,6 @@
   employeeTable();
 });
 
-// ==== STATE ====
 let currentPage = 1;
 const pageSize = 10;
 let totalPages = 1;
@@ -12,18 +11,16 @@ let searchEmployeeTerm = '';
 const container = document.getElementById('employeeTable');
 const searchEmployeeInput = document.getElementById('searchEmployeeInput');
 
-// ==== SEARCH (debounce 300ms) ====
 let searchTimeOut;
 searchEmployeeInput.addEventListener('input', (e) => {
   clearTimeout(searchTimeOut);
   searchTimeOut = setTimeout(() => {
     searchEmployeeTerm = e.target.value;
-    currentPage = 1; // reset ke halaman 1 tiap kali search berubah
+    currentPage = 1;
     employeeTable();
   }, 300);
 });
 
-// ==== FETCH + ORCHESTRATOR ====
 const employeeTable = async () => {
   const url = `http://localhost:5001/Home/GetEmployeePage?PageNumber=${currentPage}&PageSize=${pageSize}&SearchEmployee=${searchEmployeeTerm}`;
 
@@ -53,7 +50,6 @@ const employeeTable = async () => {
   }
 };
 
-// ==== RENDER TABLE ====
 const renderTable = (employees) => {
   const rows = employees
     .map(
@@ -128,7 +124,6 @@ const renderPagination = () => {
     </div>`;
 };
 
-// ==== ATTACH PAGINATION EVENTS ====
 const attachPaginationEvents = () => {
   const prevBtn = document.getElementById('prevPage');
   const nextBtn = document.getElementById('nextPage');
@@ -163,7 +158,6 @@ const attachPaginationEvents = () => {
   });
 };
 
-// ==== ATTACH DELETE EVENTS ====
 const attachRowEvents = () => {
   const deleteButtons = document.querySelectorAll('.btn-delete');
 
@@ -191,16 +185,15 @@ const attachRowEvents = () => {
           );
         }
 
-        // kalau ini row terakhir di halaman & bukan halaman 1, mundur 1 halaman
         const isLastRowOnPage =
           container.querySelectorAll('tbody tr').length === 1;
         if (isLastRowOnPage && currentPage > 1) {
           currentPage -= 1;
         }
 
-        employeeTable(); // fetch ulang biar data & pagination sinkron sama server
+        employeeTable();
       } catch (err) {
-        alert(err.message); // bisa diganti Bootstrap alert/toast nanti
+        alert(err.message);
         e.target.disabled = false;
         e.target.textContent = 'Delete';
       }

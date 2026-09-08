@@ -11,7 +11,7 @@ using demo_app_mozaik.Data;
 namespace demo_app_mozaik.Data.Migrations
 {
     [DbContext(typeof(DbStoreContext))]
-    [Migration("20260906122514_InitialCreate")]
+    [Migration("20260908064954_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
