@@ -3,7 +3,6 @@ using Bogus;
 using Bogus.DataSets;
 using demo_app_mozaik.Models;
 using demo_app_mozaik.RequestHelper;
-using SQLitePCL;
 
 namespace demo_app_mozaik.Extensions;
 
