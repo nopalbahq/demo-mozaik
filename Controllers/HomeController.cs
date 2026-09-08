@@ -16,12 +16,12 @@ public class HomeController(DbStoreContext context) : Controller
         return View();
     }
 
-    public async Task<IActionResult> GetAllMember()
-    {
-        var employees = await context.Employees.ToListAsync();
+    // public async Task<IActionResult> GetAllMember()
+    // {
+    //     var employees = await context.Employees.ToListAsync();
 
-        return Ok(employees);
-    }
+    //     return Ok(employees);
+    // }
 
     public async Task<IActionResult> GetEmployeePage([FromQuery] EmployeeParams employeeParams)
     {
@@ -35,6 +35,7 @@ public class HomeController(DbStoreContext context) : Controller
         return Ok(new {data = employees, metadata = employees.MetaData});
         // return Ok(employees);
     }
+
 
     [HttpDelete("/api/employees/{id:int}")]
     public async Task<IActionResult> DeleteById(int id)

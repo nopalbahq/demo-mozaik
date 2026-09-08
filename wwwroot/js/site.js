@@ -39,7 +39,7 @@ const employeeTable = async () => {
 
     if (employees && employees.length > 0) {
       container.innerHTML = renderTable(employees) + renderPagination();
-      attachRowEvents();
+      attachDeleteEvents();
       attachPaginationEvents();
     } else {
       container.innerHTML = '<p class="text-muted">Tidak ada data</p>';
@@ -91,7 +91,6 @@ const renderTable = (employees) => {
     </table>`;
 };
 
-// ==== RENDER PAGINATION ====
 const renderPagination = () => {
   const startItem = totalCount === 0 ? 0 : (currentPage - 1) * pageSize + 1;
   const endItem = Math.min(currentPage * pageSize, totalCount);
@@ -158,7 +157,7 @@ const attachPaginationEvents = () => {
   });
 };
 
-const attachRowEvents = () => {
+const attachDeleteEvents = () => {
   const deleteButtons = document.querySelectorAll('.btn-delete');
 
   deleteButtons.forEach((btn) => {
