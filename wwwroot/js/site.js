@@ -22,7 +22,7 @@ searchEmployeeInput.addEventListener('input', (e) => {
 });
 
 const employeeTable = async () => {
-  const url = `http://localhost:5001/Home/GetEmployeePage?PageNumber=${currentPage}&PageSize=${pageSize}&SearchEmployee=${searchEmployeeTerm}`;
+  const url = `/api/employees?PageNumber=${currentPage}&PageSize=${pageSize}&SearchEmployee=${searchEmployeeTerm}`;
 
   try {
     const response = await fetch(url);
@@ -170,12 +170,9 @@ const attachDeleteEvents = () => {
       e.target.textContent = 'Deleting...';
 
       try {
-        const response = await fetch(
-          `http://localhost:5001/api/employees/${id}`,
-          {
-            method: 'DELETE',
-          }
-        );
+        const response = await fetch(`/api/employees/${id}`, {
+          method: 'DELETE',
+        });
 
         if (!response.ok) {
           const errorData = await response.json().catch(() => null);

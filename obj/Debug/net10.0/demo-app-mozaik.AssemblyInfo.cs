@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("demo-app-mozaik")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cc78d8039b87239c84ec2acd23f083be86ac8bb9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a77e2e25057930d50b5fc9fc3f9e350adb4e05e6")]
 [assembly: System.Reflection.AssemblyProductAttribute("demo-app-mozaik")]
 [assembly: System.Reflection.AssemblyTitleAttribute("demo-app-mozaik")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

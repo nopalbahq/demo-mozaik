@@ -23,6 +23,7 @@ public class HomeController(DbStoreContext context) : Controller
     //     return Ok(employees);
     // }
 
+    [HttpGet("/api/employees")]
     public async Task<IActionResult> GetEmployeePage([FromQuery] EmployeeParams employeeParams)
     {
         var query = context.Employees

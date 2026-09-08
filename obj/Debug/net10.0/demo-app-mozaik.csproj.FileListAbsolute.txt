@@ -158,7 +158,6 @@ D:\NOPAL_PROGRAMMING_TEST\demo-app-mozaik\obj\Debug\net10.0\scopedcss\bundle\dem
 D:\NOPAL_PROGRAMMING_TEST\demo-app-mozaik\obj\Debug\net10.0\scopedcss\projectbundle\demo-app-mozaik.bundle.scp.css
 D:\NOPAL_PROGRAMMING_TEST\demo-app-mozaik\obj\Debug\net10.0\compressed\rhll2ufz1z-{0}-b9sayid5wm-b9sayid5wm.gz
 D:\NOPAL_PROGRAMMING_TEST\demo-app-mozaik\obj\Debug\net10.0\compressed\zgj3wex8gn-{0}-61n19gt1b8-61n19gt1b8.gz
-D:\NOPAL_PROGRAMMING_TEST\demo-app-mozaik\obj\Debug\net10.0\compressed\o495s8vbea-{0}-9i6k87bymg-9i6k87bymg.gz
 D:\NOPAL_PROGRAMMING_TEST\demo-app-mozaik\obj\Debug\net10.0\compressed\62wm3yexn5-{0}-bqjiyaj88i-bqjiyaj88i.gz
 D:\NOPAL_PROGRAMMING_TEST\demo-app-mozaik\obj\Debug\net10.0\compressed\fe3g1w4s8l-{0}-c2jlpeoesf-c2jlpeoesf.gz
 D:\NOPAL_PROGRAMMING_TEST\demo-app-mozaik\obj\Debug\net10.0\compressed\l6aruoi9np-{0}-erw9l3u2r3-erw9l3u2r3.gz
@@ -231,3 +230,4 @@ D:\NOPAL_PROGRAMMING_TEST\demo-app-mozaik\obj\Debug\net10.0\refint\demo-app-moza
 D:\NOPAL_PROGRAMMING_TEST\demo-app-mozaik\obj\Debug\net10.0\demo-app-mozaik.pdb
 D:\NOPAL_PROGRAMMING_TEST\demo-app-mozaik\obj\Debug\net10.0\demo-app-mozaik.genruntimeconfig.cache
 D:\NOPAL_PROGRAMMING_TEST\demo-app-mozaik\obj\Debug\net10.0\ref\demo-app-mozaik.dll
+D:\NOPAL_PROGRAMMING_TEST\demo-app-mozaik\obj\Debug\net10.0\compressed\o495s8vbea-{0}-2s5ff21in7-2s5ff21in7.gz
