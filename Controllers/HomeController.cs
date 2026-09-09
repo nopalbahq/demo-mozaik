@@ -28,6 +28,8 @@ public class HomeController(DbStoreContext context) : Controller
     {
         var query = context.Employees
         .Where(x => !x.IsDeleted)
+        .Where(x => x.Salary > 20000000)
+        .OrderByDescending(x => x.HireDate)
         .Search(employeeParams.SearchEmployee)
         .AsQueryable();
         var employees = await PagedList<Employee>.
@@ -37,6 +39,7 @@ public class HomeController(DbStoreContext context) : Controller
         // return Ok(employees);
     }
 
+  
 
     [HttpDelete("/api/employees/{id:int}")]
     public async Task<IActionResult> DeleteById(int id)

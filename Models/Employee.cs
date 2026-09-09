@@ -17,4 +17,5 @@ public class Employee
     public required string JobTitle { get; set; }
     public DateTime CreatedDate { get; set; }
     public bool IsDeleted { get; set; }
+    public string? Gender { get; set; }
 }

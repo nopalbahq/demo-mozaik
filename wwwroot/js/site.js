@@ -11,6 +11,7 @@ let searchEmployeeTerm = '';
 const container = document.getElementById('employeeTable');
 const searchEmployeeInput = document.getElementById('searchEmployeeInput');
 
+// Debouncing Searching Field
 let searchTimeOut;
 searchEmployeeInput.addEventListener('input', (e) => {
   clearTimeout(searchTimeOut);
@@ -37,6 +38,7 @@ const employeeTable = async () => {
     totalPages = metadata.totalPages;
     totalCount = metadata.totalCount;
 
+    // Fetching Result Employee
     if (employees && employees.length > 0) {
       container.innerHTML = renderTable(employees) + renderPagination();
       attachDeleteEvents();
@@ -50,6 +52,7 @@ const employeeTable = async () => {
   }
 };
 
+// Render Table
 const renderTable = (employees) => {
   const rows = employees
     .map(
@@ -59,7 +62,7 @@ const renderTable = (employees) => {
           <td>${employee.firstName}</td>
           <td>${employee.lastName}</td>
           <td>${employee.departement}</td>
-          <td>${employee.hireDate}</td>
+          <td>${employee.hireDate.toLocaleString('dd/MM/YY')}</td>
           <td>${employee.salary.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
           <td>${employee.email}</td>
           <td>${employee.jobTitle}</td>
@@ -91,6 +94,7 @@ const renderTable = (employees) => {
     </table>`;
 };
 
+// Paginations
 const renderPagination = () => {
   const startItem = totalCount === 0 ? 0 : (currentPage - 1) * pageSize + 1;
   const endItem = Math.min(currentPage * pageSize, totalCount);
@@ -123,6 +127,7 @@ const renderPagination = () => {
     </div>`;
 };
 
+// Trigger Paginations
 const attachPaginationEvents = () => {
   const prevBtn = document.getElementById('prevPage');
   const nextBtn = document.getElementById('nextPage');
@@ -157,6 +162,7 @@ const attachPaginationEvents = () => {
   });
 };
 
+// Trigger Delete
 const attachDeleteEvents = () => {
   const deleteButtons = document.querySelectorAll('.btn-delete');
 
